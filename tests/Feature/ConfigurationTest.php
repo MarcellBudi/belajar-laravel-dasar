@@ -23,8 +23,8 @@ class ConfigurationTest extends TestCase
     public function testConfig() {
         $firstName = config('contoh.author.first');
         $lastName = config('contoh.author.last');
-        $email = config('contoh.author.email');
-        $linkedin = config('contoh.author.linkedin');
+        $email = config('contoh.email');
+        $linkedin = config('contoh.linkedin');
 
         self::assertEquals('Marcell', $firstName);
         self::assertEquals('Budi', $lastName);
