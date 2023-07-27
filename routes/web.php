@@ -82,3 +82,8 @@ Route::post('/input/hello/input', [InputContoller::class, 'helloInput']);
 Route::post('/input/hello/array', [InputContoller::class, 'helloArray']);
 Route::post('/input/type', [InputContoller::class, 'inputType']);
 
+Route::post('/input/filter/only', [InputContoller::class, 'filterOnly']);
+Route::post('/input/filter/except', [InputContoller::class, 'filterExcept']);
+
+Route::post('/input/filter/merge', [InputContoller::class, 'filterMerge']);
+
