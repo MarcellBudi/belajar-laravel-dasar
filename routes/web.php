@@ -143,3 +143,32 @@ Route::post('/form', [\App\Http\Controllers\FormController::class, 'submitForm']
 Route::get('/url/current', function (){
     return \Illuminate\Support\Facades\URL::full();
 });
+
+Route::get('/session/create', [\App\Http\Controllers\SessionController::class, 'createSession']);
+Route::get('/session/get', [\App\Http\Controllers\SessionController::class, 'getSession']);
+
+Route::get('/error/sample', function (){
+    throw new Exception("Sample Error");
+});
+
+
+Route::get('/error/manual', function (){
+    report(new Exception("Sample Error"));
+    return "OK";
+});
+
+Route::get('/error/validation', function (){
+    throw new \App\Exceptions\ValidationException("Validation Error");
+});
+
+Route::get('/abort/400', function (){
+    abort(400, "Ups Validation Error");
+});
+
+Route::get('/abort/401', function (){
+    abort(401);
+});
+
+Route::get('/abort/500', function (){
+    abort(500);
+});
